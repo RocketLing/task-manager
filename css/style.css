@@ -1,0 +1,221 @@
+/* --------------------------- GLOBAL ----------------------------- */
+
+*, *::before, *::after{
+    font-family: inherit;
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    font-family: 'Work Sans', sans-serif;
+    background-color:rgb(255, 203, 220);
+
+    display: grid;
+    grid-template:
+        "header header header header"
+        "lists lists active active"
+        "lists lists active active";
+}
+
+
+/* -------------------------------- TITLE -------------------------------- */
+.title{
+    grid-area: header;
+    text-align: center;
+    font-size: 50px;
+    color: rgb(101, 192, 252, 0.486);
+    letter-spacing: 5px;
+    width: 100%;
+    height: 25px;
+}
+
+
+
+/* MY LISTS -------------------------------- LEFT SIDE */
+.all-tasks{
+    grid-area: lists;
+    line-height: 1.7;
+    position: absolute;
+    top: 40%;
+    left: 10%;
+    height: 100%;
+    width: 380px;
+    border-radius: 15px;
+    padding: 10px 0 0 0;
+    background-color: rgb(255, 182, 212);
+}
+
+.list-title{
+    font-size: 36px;
+    color: black;
+    padding-left: 50px;
+    letter-spacing: 3px;
+}
+
+.list-categories{
+    list-style-type: none;
+    font-size: 20px;
+}
+
+li{
+    cursor: pointer;
+    position: relative;
+    width: 85%;
+    padding: 10px 0 10px 20px;
+    border-radius: 15px;
+    background-color: whitesmoke;
+    box-shadow: 0.1px 4px 8px 2px rgba(90, 3, 68, 0.171);
+
+}
+
+li:not(:first-child){
+    margin-top: 12px;
+}
+
+input.new-list{
+    box-shadow: 0.1px 4px 8px 2px rgba(90, 3, 68, 0.171)
+}
+
+.creator{
+    position: relative;
+    margin-left: 30px;
+    margin-top: 25px;
+    width: 100%;
+    height: 60px;
+    display: flex;
+}
+
+
+
+/* MY TASKS -------------------------------- RIGHT SIDE */
+.todo-list{
+    padding: 35px;
+    grid-area: active;
+    position: absolute;
+    top: 25%;
+    left: 55%;
+    height: 550px;
+    width: 400px;
+    background-color: whitesmoke;
+    border-radius: 15px;
+    padding: 10px 0 0 0;
+    
+}
+
+
+.todo-header{
+    padding: 35px;
+    background:rgba(131, 172, 248, 0.452);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 3px;
+}
+.task-title{
+    margin: 0;
+    font-size: 30px;
+    letter-spacing: 2px;
+    
+}
+.count{
+    margin:0;
+    font-size: 14px;
+    color: whitesmoke;
+}
+
+
+/* --------- Tasks --------- */
+.task-list{
+    overflow: scroll; 
+}
+
+.task-item{
+
+    position: relative;
+    width: 80%;
+    padding: 10px 0 10px 20px;
+    margin-top: 20px;
+    margin-left: 15px;
+    border-radius: 15px;
+    box-shadow: 0.1px 4px 8px 2px rgba(79, 124, 248, 0.171);
+}
+.task-item:hover{
+    opacity: 0.5;
+}
+label{
+    margin-left: 30px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+::-webkit-scrollbar{
+    display: none;
+}
+
+
+.new-task-creator{
+    position: relative;
+    margin-left: 10px;
+    margin-top: 25px;
+    height: 50px;
+    display: flex;
+}
+
+input.new-task{
+    box-shadow: 0.1px 4px 10px 2px rgba(79, 124, 248, 0.336);
+}
+
+.btn-delete{
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding-right: 10px;
+    color: inherit;
+    transition: 0.3s;
+    font-size: 14px;
+}
+
+
+
+
+
+/* GLOBAL */
+input[type=text]{
+    width: 80%;
+    height: 60%;
+    padding: 2px 0 2px 20px;
+    outline: none;
+    border-radius: 8px;
+    font-size: 16px;
+    border: none;
+    transition: all 0.3s;
+}
+input[type=text]:focus{
+    transform: translateY(-5px);
+    border: none;
+}
+input[type=text]:focus::placeholder{
+    opacity: 0.5;
+}
+
+input[type=checkbox]{
+    opacity: 0;
+    position: absolute;
+}
+
+
+.btn{
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding-left: 3px;
+    color: inherit;
+    transition: 0.3s;
+    font-size: 26px;
+    font-weight: 900;
+}
+.btn:hover{
+    opacity: 0.7;
+}
+
